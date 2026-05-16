@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI & Data Governance Leader Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #07111f;
+      --card: rgba(17, 24, 39, 0.72);
+      --card-border: rgba(255,255,255,0.08);
+      --primary: #4fd1ff;
+      --secondary: #8b5cf6;
+      --text: #e5f0ff;
+      --muted: #9fb3c8;
+      --success: #00ffb3;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top left, #112240 0%, #07111f 45%, #040b16 100%);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,209,255,0.22), transparent 70%);
+      filter: blur(20px);
+      z-index: 0;
+      animation: float 8s ease-in-out infinite alternate;
+    }
+
+    .glow.one {
+      top: -100px;
+      left: -100px;
+    }
+
+    .glow.two {
+      bottom: -100px;
+      right: -120px;
+      background: radial-gradient(circle, rgba(139,92,246,0.20), transparent 70%);
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(30px);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(1400px, 94%);
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 28px;
+    }
+
+    .sidebar,
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 24px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(79,209,255,0.25), rgba(139,92,246,0.3));
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      font-weight: 800;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 35px rgba(79,209,255,0.18);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .title {
+      color: var(--primary);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .summary {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .contact-item,
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .contact-item span:first-child,
+    .skill-name {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-item span:last-child {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      animation: grow 2s ease forwards;
+      transform-origin: left;
+    }
+
+    @keyframes grow {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .hero {
+      padding: 36px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(79,209,255,0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h2 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      max-width: 850px;
+    }
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 850px;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 30px;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .stat p {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(var(--primary), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h4 {
+      color: var(--primary);
+      font-size: 14px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .timeline-item p,
+    .timeline-item li {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .timeline-item ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(79,209,255,0.10);
+      border: 1px solid rgba(79,209,255,0.22);
+      color: #dff7ff;
+      font-size: 13px;
+      transition: 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(79,209,255,0.2);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    .typing {
+      color: var(--success);
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 12px;
+      min-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 1100px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <div class="container">
+
+    <aside class="sidebar">
+
+      <div class="card profile">
+        <div class="avatar">SS</div>
+        <h1>Samsunder</h1>
+        <div class="title">AI & Data Governance Strategist</div>
+
+        <p class="summary">
+          Banking technology and data governance leader with 20+ years of experience driving enterprise-scale data modernization, regulatory compliance, AI-driven governance, and data quality transformation initiatives.
+        </p>
+
+        <div class="typing" id="typing"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Core Expertise</div>
+
+        <div class="skill-item">
+          <div style="width:100%">
+            <div class="skill-name">Data Governance & Compliance</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div style="width:100%">
+            <div class="skill-name">AI & GenAI Strategy</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div style="width:100%">
+            <div class="skill-name">Banking Regulatory Programs</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div style="width:100%">
+            <div class="skill-name">Data Quality & Observability</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div style="width:100%">
+            <div class="skill-name">Enterprise Data Architecture</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Technology Stack</div>
+
+        <div class="badge-grid">
+          <div class="badge">Python</div>
+          <div class="badge">Spark</div>
+          <div class="badge">Ab Initio</div>
+          <div class="badge">LLMs</div>
+          <div class="badge">RAG</div>
+          <div class="badge">Vector DB</div>
+          <div class="badge">Metadata Mgmt</div>
+          <div class="badge">AI Agents</div>
+          <div class="badge">Data Lineage</div>
+          <div class="badge">DQ Frameworks</div>
+          <div class="badge">Cloud & On-Prem</div>
+          <div class="badge">Banking Controls</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Certifications</div>
+
+        <div class="timeline-item" style="margin-bottom:0;">
+          <h3>DAMA CDMP</h3>
+          <h4>Certified Data Management Professional</h4>
+          <p>Specialized in enterprise data governance, quality, architecture, metadata, and regulatory data management practices.</p>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="main">
+
+      <section class="card hero">
+        <h2>
+          Designing the Future of <span>AI-Powered Banking Data Platforms</span>
+        </h2>
+
+        <p>
+          Strategic data leader focused on building intelligent governance platforms, AI-enabled regulatory solutions, enterprise knowledge systems, and scalable data quality ecosystems for complex banking environments.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>20+</h3>
+            <p>Years Experience</p>
+          </div>
+
+          <div class="stat">
+            <h3>100+</h3>
+            <p>Critical Data Domains</p>
+          </div>
+
+          <div class="stat">
+            <h3>AI</h3>
+            <p>Governance & GenAI</p>
+          </div>
+
+          <div class="stat">
+            <h3>Banking</h3>
+            <p>Compliance Expertise</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <h3>Senior Data Governance & AI Strategy Leader</h3>
+            <h4>Banking & Regulatory Transformation</h4>
+
+            <p>
+              Leading enterprise-scale initiatives focused on data governance modernization, AI-enabled compliance operations, regulatory remediation, and intelligent data quality ecosystems.
+            </p>
+
+            <ul>
+              <li>Designed AI-powered approaches for rationalizing enterprise data quality rules across Critical Data Elements (CDEs).</li>
+              <li>Developed concepts for RAG-based enterprise knowledge systems integrating metadata, controls, policies, and business rules.</li>
+              <li>Built governance strategies supporting consent order remediation and banking compliance initiatives.</li>
+              <li>Defined enterprise frameworks for mapping CDEs to PDEs using AI and semantic knowledge models.</li>
+              <li>Introduced data observability and lineage-driven monitoring using Python, Spark, and enterprise ETL tooling.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Enterprise Data Management Specialist</h3>
+            <h4>Data Governance | Quality | Metadata</h4>
+
+            <p>
+              Delivered enterprise data management capabilities supporting large-scale banking programs with emphasis on regulatory transparency, operational resilience, and trusted analytics.
+            </p>
+
+            <ul>
+              <li>Implemented scalable data quality frameworks for structured and semi-structured banking data.</li>
+              <li>Partnered with business, compliance, and technology stakeholders to align governance operating models.</li>
+              <li>Defined metadata management and lineage standards to improve auditability and regulatory traceability.</li>
+              <li>Enabled data-driven decision making through standardized governance and reporting practices.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">AI & Innovation Portfolio</div>
+
+        <div class="badge-grid">
+          <div class="badge">AI-Powered Gap Engine</div>
+          <div class="badge">Regulatory Knowledge Base</div>
+          <div class="badge">RAG Architecture</div>
+          <div class="badge">Data Quality Rationalization</div>
+          <div class="badge">AI Agent Frameworks</div>
+          <div class="badge">Control Mapping Accelerator</div>
+          <div class="badge">SAS Logic Extraction AI</div>
+          <div class="badge">Metadata Intelligence</div>
+          <div class="badge">GenAI Compliance Assistant</div>
+          <div class="badge">Enterprise Semantic Search</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">Leadership Highlights</div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <h3>Enterprise Governance Transformation</h3>
+            <p>
+              Built scalable governance approaches integrating data quality, metadata, lineage, regulatory controls, and AI-assisted operational intelligence.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>AI Product Ideation & Prototyping</h3>
+            <p>
+              Driving rapid prototyping of intelligent data products for banking, compliance, governance, and enterprise risk management.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Future-Ready Data Strategy</h3>
+            <p>
+              Focused on bridging enterprise governance with GenAI, vector search, intelligent automation, and semantic data ecosystems.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="footer">
+        Futuristic Resume Experience • Built with HTML, CSS & JavaScript • AI-Driven Executive Profile
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const phrases = [
+      'Initializing Governance Intelligence...',
+      'Loading AI Compliance Systems...',
+      'Activating Data Strategy Engine...',
+      'Connected to Enterprise Knowledge Grid...',
+      'GenAI + Banking + Governance'
+    ];
+
+    const typing = document.getElementById('typing');
+
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const current = phrases[phraseIndex];
+
+      if (!deleting) {
+        typing.textContent = current.substring(0, letterIndex + 1);
+        letterIndex++;
+
+        if (letterIndex === current.length) {
+          deleting = true;
+          setTimeout(typeEffect, 1600);
+          return;
+        }
+      } else {
+        typing.textContent = current.substring(0, letterIndex - 1);
+        letterIndex--;
+
+        if (letterIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      }
+
+      setTimeout(typeEffect, deleting ? 40 : 80);
+    }
+
+    typeEffect();
+
+    document.addEventListener('mousemove', (e) => {
+      const glow = document.querySelector('.glow.one');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      glow.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+    });
+  </script>
+
+</body>
+</html>
